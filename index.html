@@ -1,1 +1,519 @@
-{"type":"error","error":{"type":"not_found_error","message":"File not found in container: /mnt/user-data/outputs/leap_lp_v4.html","details":{"error_visibility":"user_facing"}},"request_id":"req_011Ca8Xjm3MCtYP8kyDgzPn3"}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEAP – 指名される動画編集者になる</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563EB;--blue-dark:#1E40AF;--blue-xd:#1E3A8A;
+  --blue-light:#EFF6FF;--blue-mid:#DBEAFE;
+  --slate:#1E293B;--slate-mid:#334155;--slate-light:#64748B;
+  --teal:#0D9488;--teal-light:#CCFBF1;--teal-bg:#F0FDFA;
+  --white:#fff;--bg:#F8FAFC;--border:#E2E8F0;
+  --red:#EF4444;--red-light:#FEF2F2;
+  --amber:#F59E0B;--amber-light:#FEF3C7;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--slate);line-height:1.7;overflow-x:hidden}
+.inner{max-width:960px;margin:0 auto;padding:80px 24px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-light);padding:5px 14px;border-radius:99px;margin-bottom:18px}
+.h2{font-size:clamp(24px,4vw,38px);font-weight:700;line-height:1.4;color:var(--slate);margin-bottom:14px}
+.lead{font-size:15px;color:var(--slate-light);line-height:1.9;max-width:600px}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:21px;font-weight:700;color:var(--blue-dark);letter-spacing:.08em}
+.nav-cta{display:inline-flex;align-items:center;gap:7px;background:var(--blue);color:#fff;font-size:13px;font-weight:700;padding:10px 20px;border-radius:6px;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--blue-dark)}
+
+/* HERO */
+.hero{background:linear-gradient(158deg,#1E40AF 0%,#2563EB 55%,#1D4ED8 100%);padding:136px 24px 80px;text-align:center;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;opacity:.055;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:48px 48px}
+.hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 0%,rgba(255,255,255,.08) 0%,transparent 70%)}
+.hero-inner{position:relative;max-width:700px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.9);font-size:12px;font-weight:500;padding:6px 16px;border-radius:99px;margin-bottom:26px;animation:fadeUp .7s ease .1s both}
+.hero-badge strong{color:#86EFAC}
+.hero-title{font-size:clamp(30px,6vw,56px);font-weight:700;color:#fff;line-height:1.35;margin-bottom:22px;animation:fadeUp .7s ease .25s both}
+.hero-title em{font-style:normal;background:linear-gradient(90deg,#86EFAC,#67E8F9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-lead{font-size:16px;color:rgba(255,255,255,.72);line-height:2;margin-bottom:38px;animation:fadeUp .7s ease .4s both}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:52px;animation:fadeUp .7s ease .55s both}
+.btn-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--blue-dark);font-size:15px;font-weight:700;padding:16px 30px;border-radius:8px;text-decoration:none;transition:all .2s;box-shadow:0 4px 20px rgba(0,0,0,.14)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.18)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1.5px solid rgba(255,255,255,.38);color:rgba(255,255,255,.85);font-size:14px;font-weight:500;padding:16px 26px;border-radius:8px;text-decoration:none;transition:all .2s}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.hero-stats{display:flex;justify-content:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:12px;overflow:hidden;max-width:500px;margin:0 auto;animation:fadeUp .7s ease .7s both}
+.hero-stat{flex:1;padding:17px 14px;text-align:center;border-right:1px solid rgba(255,255,255,.12)}
+.hero-stat:last-child{border-right:none}
+.h-stat-n{font-family:'Plus Jakarta Sans',sans-serif;font-size:25px;font-weight:700;color:#fff;line-height:1;margin-bottom:4px}
+.h-stat-l{font-size:11px;color:rgba(255,255,255,.5)}
+
+/* TRUST */
+.trust-bar{background:#fff;border-bottom:1px solid var(--border);padding:16px 24px}
+.trust-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:var(--slate-mid)}
+
+/* FOR WHO */
+.for-who{background:#fff}
+.persona-grid{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.persona-card{border:1.5px solid var(--border);border-radius:14px;padding:28px 24px;transition:all .25s;position:relative;overflow:hidden}
+.persona-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.persona-card:hover{border-color:var(--blue);box-shadow:0 8px 28px rgba(37,99,235,.09);transform:translateY(-3px)}
+.persona-card:hover::before{transform:scaleX(1)}
+.persona-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
+.p-icon{width:48px;height:48px;flex-shrink:0;background:var(--blue-light);border-radius:12px;display:flex;align-items:center;justify-content:center}
+.p-tag{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:.07em;text-transform:uppercase;background:var(--blue-light);padding:3px 10px;border-radius:99px;display:inline-block;margin-bottom:5px}
+.p-name{font-size:16px;font-weight:700;color:var(--slate);line-height:1.4}
+.p-pain{background:var(--red-light);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:11px 14px;margin-bottom:12px;font-size:13px;color:#991B1B;line-height:1.8;font-style:italic}
+.p-pain-lbl,.p-gain-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.p-pain-lbl{color:var(--red)}
+.p-gain-lbl{color:var(--teal)}
+.p-arrow{display:flex;align-items:center;gap:8px;margin:10px 0;font-size:10px;font-weight:700;color:var(--slate-light);letter-spacing:.06em}
+.p-arrow::before,.p-arrow::after{content:'';flex:1;height:1px;background:var(--border)}
+.p-gain{background:var(--teal-bg);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;padding:11px 14px;font-size:13px;color:#134E4A;line-height:1.8}
+
+/* BENEFITS before/after */
+.benefits{background:var(--blue-dark)}
+.benefits .chip{background:rgba(255,255,255,.15);color:rgba(255,255,255,.85)}
+.benefits .h2{color:#fff}
+.benefits .lead{color:rgba(255,255,255,.6)}
+.tf-list{margin-top:44px;display:flex;flex-direction:column;gap:14px}
+.tf-item{display:grid;grid-template-columns:1fr 48px 1fr;align-items:stretch;border-radius:12px;overflow:hidden}
+.tf-before{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:22px 24px;display:flex;gap:14px;align-items:flex-start}
+.tf-mid{background:rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.tf-after{background:rgba(13,148,136,.16);border:1px solid rgba(13,148,136,.32);padding:22px 24px;display:flex;gap:14px;align-items:flex-start}
+.tf-ico{width:38px;height:38px;flex-shrink:0;border-radius:9px;display:flex;align-items:center;justify-content:center}
+.tf-ico.b{background:rgba(239,68,68,.14)}
+.tf-ico.a{background:rgba(13,148,136,.22)}
+.tf-lbl{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.tf-lbl.b{color:rgba(239,68,68,.8)}
+.tf-lbl.a{color:#5EEAD4}
+.tf-txt{font-size:13px;line-height:1.75}
+.tf-before .tf-txt{color:rgba(255,255,255,.48)}
+.tf-after .tf-txt{color:rgba(255,255,255,.92);font-weight:500}
+
+/* SUPPORT */
+.support{background:#fff}
+.sup-grid{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sup-card{display:flex;gap:14px;padding:22px;border:1.5px solid var(--border);border-radius:12px;transition:all .2s}
+.sup-card:hover{border-color:var(--blue);box-shadow:0 4px 18px rgba(37,99,235,.08)}
+.sup-ico{flex-shrink:0;width:50px;height:50px;background:var(--blue-light);border-radius:10px;display:flex;align-items:center;justify-content:center}
+.sup-title{font-size:14px;font-weight:700;color:var(--slate);margin-bottom:5px}
+.sup-body{font-size:13px;color:var(--slate-light);line-height:1.8}
+
+/* CURRICULUM */
+.curriculum{background:var(--bg)}
+.phase-grid{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
+.phase-col{background:#fff;border:1.5px solid var(--border);border-radius:14px;overflow:hidden}
+.phase-head{padding:20px 20px 14px;border-bottom:1px solid var(--border)}
+.phase-num{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px}
+.phase-title{font-size:16px;font-weight:700;color:var(--slate);margin-bottom:4px}
+.phase-desc{font-size:12px;color:var(--slate-light);line-height:1.7}
+.phase-items{padding:10px 0}
+.phase-item{display:flex;align-items:center;gap:11px;padding:9px 20px;transition:background .15s}
+.phase-item:hover{background:var(--bg)}
+.pi-ico{width:28px;height:28px;flex-shrink:0;border-radius:7px;display:flex;align-items:center;justify-content:center}
+.pi-ch{font-size:10px;font-weight:700;letter-spacing:.06em;color:var(--slate-light);line-height:1}
+.pi-name{font-size:13px;font-weight:500;color:var(--slate);line-height:1.4;margin-top:2px}
+
+/* COMPARISON */
+.comparison{background:#fff}
+.comp-note{display:flex;align-items:flex-start;gap:10px;background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:10px;padding:13px 16px;margin-bottom:32px;font-size:13px;color:var(--blue-dark);line-height:1.8}
+.comp-wrap{overflow-x:auto;border-radius:14px;border:1.5px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead tr{background:var(--slate)}
+th{padding:14px 18px;text-align:left;font-size:11px;font-weight:700;color:rgba(255,255,255,.65);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+th.c-leap{color:#fff;background:var(--blue-dark)}
+th:first-child{min-width:180px}
+tbody tr{border-bottom:1px solid var(--border)}
+tbody tr:last-child{border-bottom:none}
+tbody tr:nth-child(even){background:var(--bg)}
+td{padding:14px 18px;color:var(--slate-mid);vertical-align:middle;line-height:1.6}
+td:first-child{font-weight:600;color:var(--slate);font-size:13px}
+td.c-leap{background:rgba(37,99,235,.04);border-left:2px solid rgba(37,99,235,.14);border-right:2px solid rgba(37,99,235,.14)}
+tbody tr:nth-child(even) td.c-leap{background:rgba(37,99,235,.07)}
+.cy{display:inline-flex;align-items:center;gap:5px;color:var(--teal);font-weight:700;font-size:13px}
+.cn{display:inline-flex;align-items:center;gap:5px;color:var(--slate-light);font-size:13px}
+.cw{display:inline-flex;align-items:center;gap:5px;color:#B45309;font-weight:600;font-size:13px}
+.lh{font-weight:700;color:var(--blue-dark);font-size:13px}
+
+/* FAQ */
+.faq{background:var(--bg)}
+.faq .inner{max-width:720px}
+.faq-lead{font-size:15px;color:var(--slate-light);line-height:1.9;margin-bottom:32px}
+.faq-list{display:flex;flex-direction:column;gap:8px}
+.faq-item{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:var(--blue)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 22px;cursor:pointer;user-select:none}
+.faq-qt{font-size:14px;font-weight:700;color:var(--slate);line-height:1.6}
+.faq-ico{width:26px;height:26px;border-radius:50%;background:var(--blue-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s,background .2s}
+.faq-item.open .faq-ico{transform:rotate(45deg);background:var(--blue)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-ai{padding:14px 22px 18px;font-size:14px;color:var(--slate-mid);line-height:1.9;border-top:1px solid var(--border)}
+
+/* CTA */
+.cta-final{background:linear-gradient(135deg,var(--blue-xd) 0%,var(--blue) 100%);text-align:center}
+.cta-final .inner{max-width:620px;padding:96px 24px}
+.cta-title{font-size:clamp(26px,5vw,46px);font-weight:700;color:#fff;line-height:1.4;margin-bottom:18px}
+.cta-body{font-size:15px;color:rgba(255,255,255,.65);line-height:2;margin-bottom:38px}
+.cta-body strong{color:rgba(255,255,255,.9);font-weight:700}
+.cta-gs{display:flex;justify-content:center;gap:22px;margin-top:22px;flex-wrap:wrap}
+.cta-g{display:flex;align-items:center;gap:5px;font-size:13px;color:rgba(255,255,255,.58)}
+
+footer{background:var(--slate);padding:30px 24px;text-align:center}
+.f-logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:700;color:#fff;letter-spacing:.1em;margin-bottom:6px}
+footer p{font-size:12px;color:rgba(255,255,255,.28)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){
+  .persona-grid,.sup-grid,.phase-grid{grid-template-columns:1fr}
+  .tf-item{grid-template-columns:1fr;grid-template-rows:auto auto auto}
+  .tf-mid{padding:10px;transform:rotate(90deg)}
+  th,td{padding:11px 12px}
+}
+</style>
+</head>
+<body>
+<!-- SVG SYMBOLS -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="ic-cal" viewBox="0 0 20 20" fill="none"><rect x="2" y="3" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 8h16" stroke="currentColor" stroke-width="1.5"/><path d="M6 2v2M14 2v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="ic-ok" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#CCFBF1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#0D9488" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ic-ok-b" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#DBEAFE"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#2563EB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ic-x" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#F1F5F9"/><path d="M6.5 6.5l5 5M11.5 6.5l-5 5" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="ic-warn" viewBox="0 0 18 18" fill="none"><path d="M9 2L1 16h16L9 2z" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.4" stroke-linejoin="round"/><path d="M9 8v4" stroke="#D97706" stroke-width="1.4" stroke-linecap="round"/><circle cx="9" cy="14" r=".8" fill="#D97706"/></symbol>
+<symbol id="ic-plus" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="ic-arr" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ic-chat" viewBox="0 0 28 28" fill="none"><path d="M4 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H8l-4 4V6z" stroke="#2563EB" stroke-width="1.6" stroke-linejoin="round" fill="#EFF6FF"/><path d="M9 11h10M9 15h6" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="ic-inf" viewBox="0 0 28 28" fill="none"><path d="M5 14c0-3 2.5-5 5-5s5 2.5 5 5-2.5 5-5 5-5-2-5-5z" stroke="#2563EB" stroke-width="1.6" fill="#EFF6FF"/><path d="M23 14c0-3-2.5-5-5-5s-5 2.5-5 5 2.5 5 5 5 5-2 5-5z" stroke="#2563EB" stroke-width="1.6" fill="#EFF6FF"/><circle cx="10" cy="14" r="2" fill="#2563EB"/><circle cx="18" cy="14" r="2" fill="#2563EB"/></symbol>
+<symbol id="ic-pencil" viewBox="0 0 28 28" fill="none"><rect x="4" y="4" width="20" height="20" rx="3" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5"/><path d="M8 10h12M8 14h8" stroke="#2563EB" stroke-width="1.4" stroke-linecap="round"/><path d="M17 18l3-3-2-2-3 3v2h2z" fill="#2563EB" opacity=".7"/></symbol>
+<symbol id="ic-target" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="#2563EB" stroke-width="1.5" fill="#EFF6FF"/><circle cx="14" cy="14" r="6" stroke="#2563EB" stroke-width="1.2"/><circle cx="14" cy="14" r="2.5" fill="#2563EB"/></symbol>
+<symbol id="ic-film" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="2" y="4" width="4" height="12" fill="currentColor" opacity=".12"/><rect x="14" y="4" width="4" height="12" fill="currentColor" opacity=".12"/><path d="M8.5 8.5l4 2-4 2v-4z" fill="currentColor" opacity=".7"/></symbol>
+<symbol id="ic-design" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="8" r="1.5" fill="currentColor" opacity=".6"/><circle cx="13" cy="8" r="1.5" fill="currentColor" opacity=".6"/><circle cx="7" cy="13" r="1.5" fill="currentColor" opacity=".6"/><circle cx="13" cy="13" r="1.5" fill="currentColor" opacity=".6"/><circle cx="10" cy="10.5" r="1.8" fill="currentColor" opacity=".85"/></symbol>
+<symbol id="ic-tool" viewBox="0 0 20 20" fill="none"><path d="M12 3a4 4 0 0 1-4.3 6.2L4 13a1.2 1.2 0 0 0 1.7 1.7l3.8-3.7A4 4 0 0 1 15.5 5.5l-2 2-1.5-1.5 2-2A4 4 0 0 1 12 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+<symbol id="ic-mind" viewBox="0 0 20 20" fill="none"><path d="M10 3a4 4 0 0 1 4 4c0 1.2-.6 2.3-1.4 3A3.2 3.2 0 0 1 10 17a3.2 3.2 0 0 1-2.6-5.9A4 4 0 0 1 10 3z" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="ic-sales" viewBox="0 0 20 20" fill="none"><path d="M2 16h16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><rect x="4" y="11" width="3" height="5" rx="1" fill="currentColor" opacity=".3"/><rect x="8.5" y="7" width="3" height="9" rx="1" fill="currentColor" opacity=".6"/><rect x="13" y="4" width="3" height="12" rx="1" fill="currentColor" opacity=".9"/></symbol>
+<symbol id="ic-compass" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M10 6l-2.5 6.5 6.5-2.5-4-4z" fill="currentColor" opacity=".8"/></symbol>
+<symbol id="ic-bolt" viewBox="0 0 20 20" fill="none"><path d="M11 2L4 12h7l-2 6 9-10h-7l2-6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="currentColor" opacity=".15"/></symbol>
+<symbol id="ic-ai" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="13" rx="2.5" stroke="currentColor" stroke-width="1.5"/><circle cx="7.5" cy="9.5" r="1.2" fill="currentColor"/><circle cx="12.5" cy="9.5" r="1.2" fill="currentColor"/><path d="M7 13.5c1 .7 5 .7 6 0" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M10 4V2M8 2h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></symbol>
+<symbol id="ic-person" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="13" r="6" stroke="#2563EB" stroke-width="1.8"/><path d="M8 34c0-6 5.4-11 12-11s12 5 12 11" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round"/></symbol>
+<symbol id="ic-wallet" viewBox="0 0 40 40" fill="none"><rect x="4" y="13" width="32" height="21" rx="3" stroke="#2563EB" stroke-width="1.8"/><path d="M4 19h32" stroke="#2563EB" stroke-width="1.5"/><path d="M8 13V10a3 3 0 0 1 3-3h18a3 3 0 0 1 3 3v3" stroke="#2563EB" stroke-width="1.5"/><path d="M14 7L12 4M26 7l2-4" stroke="#EF4444" stroke-width="1.4" stroke-linecap="round"/><circle cx="28" cy="27" r="3" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.3"/></symbol>
+<symbol id="ic-home" viewBox="0 0 40 40" fill="none"><path d="M6 20L20 8l14 12" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 17v13h7v-8h6v8h7V17" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ic-plane" viewBox="0 0 40 40" fill="none"><path d="M8 28l5-12 3 3 8-8 2 6 6-3-4 14H8z" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.5" stroke-linejoin="round"/><path d="M5 32h30" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"/></symbol>
+</svg>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">LEAP</div>
+  <a href="#contact" class="nav-cta">
+    <svg width="13" height="13" style="color:white"><use href="#ic-cal"/></svg>無料相談する
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div><div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="#86EFAC" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="#86EFAC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      動画編集者のためのオンラインスクール &nbsp;<strong>モニター受講生募集中</strong>
+    </div>
+    <h1 class="hero-title">スキルだけじゃなく、<br><em>稼げる編集者</em>になる。</h1>
+    <p class="hero-lead">案件の取り方・クライアント対応・単価交渉まで。<br>"指名される動画編集者"として自立するための実践的なスクールです。</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-white"><svg width="15" height="15" style="color:#1E40AF"><use href="#ic-cal"/></svg>無料個別相談を予約する</a>
+      <a href="#curriculum" class="btn-ghost">カリキュラムを見る <svg width="14" height="14" style="color:rgba(255,255,255,.8)"><use href="#ic-arr"/></svg></a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="h-stat-n">14+</div><div class="h-stat-l">カリキュラム章数</div></div>
+      <div class="hero-stat"><div class="h-stat-n">24h</div><div class="h-stat-l">質問返信目安</div></div>
+      <div class="hero-stat"><div class="h-stat-n">∞</div><div class="h-stat-l">質問回数無制限</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><svg width="17" height="17"><use href="#ic-ok"/></svg>完全無料の個別相談</div>
+    <div class="trust-item"><svg width="17" height="17"><use href="#ic-ok"/></svg>勧誘・押しつけなし</div>
+    <div class="trust-item"><svg width="17" height="17"><use href="#ic-ok"/></svg>質問回数は無制限</div>
+    <div class="trust-item"><svg width="17" height="17"><use href="#ic-ok"/></svg>自分のペースで受講OK</div>
+  </div>
+</div>
+
+<!-- FOR WHO -->
+<section class="for-who">
+  <div class="inner">
+    <div class="chip reveal">こんな方へ</div>
+    <h2 class="h2 reveal">あなたの「今の状況」、<br>当てはまりますか？</h2>
+    <p class="lead reveal">LEAPは、動画編集で自由な働き方を実現したいと思いながら、一歩踏み出せない方のために作られたスクールです。</p>
+    <div class="persona-grid">
+
+      <div class="persona-card reveal">
+        <div class="persona-head">
+          <div class="p-icon"><svg width="30" height="30"><use href="#ic-person" style="color:#2563EB"/></svg></div>
+          <div><span class="p-tag">20〜30代</span><div class="p-name">副業・転職で<br>稼ぎたい方</div></div>
+        </div>
+        <div class="p-pain"><div class="p-pain-lbl">今の悩み</div>「動画編集を始めたけど、どうやって案件を取ればいいか全然わからない。独学で練習しても、仕事にならない気がして不安…」</div>
+        <div class="p-arrow">LEAPを受講すると</div>
+        <div class="p-gain"><div class="p-gain-lbl">受講後の変化</div>営業文・ポートフォリオの作り方から実際の案件獲得まで、ステップごとに伴走。受講中に初案件を受注する方も。</div>
+      </div>
+
+      <div class="persona-card reveal">
+        <div class="persona-head">
+          <div class="p-icon"><svg width="30" height="30"><use href="#ic-wallet" style="color:#2563EB"/></svg></div>
+          <div><span class="p-tag">30〜40代</span><div class="p-name">退職・転職を<br>考えている方</div></div>
+        </div>
+        <div class="p-pain"><div class="p-pain-lbl">今の悩み</div>「会社を辞めたいけど、スキルも実績もゼロ。今さら新しいことを始めても遅いんじゃないかと思ってしまう…」</div>
+        <div class="p-arrow">LEAPを受講すると</div>
+        <div class="p-gain"><div class="p-gain-lbl">受講後の変化</div>ゼロから体系的に学べる設計なので、未経験でも着実に前進できます。月収を軌道に乗せてから退職したOBも多数。</div>
+      </div>
+
+      <div class="persona-card reveal">
+        <div class="persona-head">
+          <div class="p-icon"><svg width="30" height="30"><use href="#ic-home" style="color:#2563EB"/></svg></div>
+          <div><span class="p-tag">育児・家庭との両立</span><div class="p-name">在宅で安定収入を<br>得たい方</div></div>
+        </div>
+        <div class="p-pain"><div class="p-pain-lbl">今の悩み</div>「育児や家事の合間に働きたい。でも会社勤めは難しいし、フリーランスで本当に稼げるのか自信が持てない…」</div>
+        <div class="p-arrow">LEAPを受講すると</div>
+        <div class="p-gain"><div class="p-gain-lbl">受講後の変化</div>自分のペースで進められるカリキュラムと、いつでも質問できる体制で、生活リズムに合わせながら収入を作れます。</div>
+      </div>
+
+      <div class="persona-card reveal">
+        <div class="persona-head">
+          <div class="p-icon"><svg width="30" height="30"><use href="#ic-plane" style="color:#2563EB"/></svg></div>
+          <div><span class="p-tag">場所・時間の自由</span><div class="p-name">旅しながら<br>働きたい方</div></div>
+        </div>
+        <div class="p-pain"><div class="p-pain-lbl">今の悩み</div>「旅しながら働くライフスタイルを夢見てるけど、そんなの一部の人だけの話で、自分には無理じゃないかと思ってしまう…」</div>
+        <div class="p-arrow">LEAPを受講すると</div>
+        <div class="p-gain"><div class="p-gain-lbl">受講後の変化</div>場所を選ばない仕事の作り方・案件管理の仕組みまで学べます。講師自身がそのライフスタイルを実現している実証済みの道。</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS before/after -->
+<section class="benefits">
+  <div class="inner">
+    <div class="chip reveal">受講前 → 受講後</div>
+    <h2 class="h2 reveal">LEAPで変わる、具体的な5つの変化</h2>
+    <p class="lead reveal">「なんとなくスキルが身についた」ではなく、働き方・収入・自信まで丸ごと変わることを目指します。</p>
+    <div class="tf-list">
+
+      <div class="tf-item reveal">
+        <div class="tf-before">
+          <div class="tf-ico b"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#EF4444" stroke-width="1.5" opacity=".5"/><path d="M7 7l6 6M13 7l-6 6" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div><div class="tf-lbl b">Before</div><div class="tf-txt">編集はできるのに、案件の取り方がわからず、クラウドソーシングで低単価案件ばかり受けている</div></div>
+        </div>
+        <div class="tf-mid"><svg width="18" height="18" style="color:#5EEAD4"><use href="#ic-arr"/></svg></div>
+        <div class="tf-after">
+          <div class="tf-ico a"><svg width="20" height="20" style="color:#5EEAD4"><use href="#ic-sales"/></svg></div>
+          <div><div class="tf-lbl a">After</div><div class="tf-txt">自分から動いて案件を獲得できる。単価を上げる交渉もできる、主体的な編集者になれる</div></div>
+        </div>
+      </div>
+
+      <div class="tf-item reveal">
+        <div class="tf-before">
+          <div class="tf-ico b"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v6l3 3" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10" r="8" stroke="#EF4444" stroke-width="1.5" opacity=".5"/></svg></div>
+          <div><div class="tf-lbl b">Before</div><div class="tf-txt">クライアントへの返信・納品の仕方がわからず、毎回不安を抱えながらやりとりしている</div></div>
+        </div>
+        <div class="tf-mid"><svg width="18" height="18" style="color:#5EEAD4"><use href="#ic-arr"/></svg></div>
+        <div class="tf-after">
+          <div class="tf-ico a"><svg width="20" height="20" style="color:#5EEAD4"><use href="#ic-chat"/></svg></div>
+          <div><div class="tf-lbl a">After</div><div class="tf-txt">「また頼みたい」と言われる対応力が身につく。リピート・紹介で仕事が自然と増えていく</div></div>
+        </div>
+      </div>
+
+      <div class="tf-item reveal">
+        <div class="tf-before">
+          <div class="tf-ico b"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="8" cy="7" r="4" stroke="#EF4444" stroke-width="1.5" opacity=".5"/><path d="M4 18c0-4 2-7 4-7" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" opacity=".5"/></svg></div>
+          <div><div class="tf-lbl b">Before</div><div class="tf-txt">デザインやサムネイルが苦手で、修正が多くクライアントからの評価が上がらない</div></div>
+        </div>
+        <div class="tf-mid"><svg width="18" height="18" style="color:#5EEAD4"><use href="#ic-arr"/></svg></div>
+        <div class="tf-after">
+          <div class="tf-ico a"><svg width="20" height="20" style="color:#5EEAD4"><use href="#ic-design"/></svg></div>
+          <div><div class="tf-lbl a">After</div><div class="tf-txt">デザイン・サムネイル・テロップまで一貫して提案できる。「この人に頼みたい」と指名される編集者へ</div></div>
+        </div>
+      </div>
+
+      <div class="tf-item reveal">
+        <div class="tf-before">
+          <div class="tf-ico b"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="#EF4444" stroke-width="1.5" opacity=".5"/><path d="M6 16l8-8" stroke="#EF4444" stroke-width="1.4" stroke-linecap="round" opacity=".5"/></svg></div>
+          <div><div class="tf-lbl b">Before</div><div class="tf-txt">ツールの使い方は独学で覚えたが作業が遅く、複数案件をこなせる気がしない</div></div>
+        </div>
+        <div class="tf-mid"><svg width="18" height="18" style="color:#5EEAD4"><use href="#ic-arr"/></svg></div>
+        <div class="tf-after">
+          <div class="tf-ico a"><svg width="20" height="20" style="color:#5EEAD4"><use href="#ic-bolt"/></svg></div>
+          <div><div class="tf-lbl a">After</div><div class="tf-txt">AI・外注・ショートカットを駆使した効率的なワークフローで、複数案件を余裕を持って回せるようになる</div></div>
+        </div>
+      </div>
+
+      <div class="tf-item reveal">
+        <div class="tf-before">
+          <div class="tf-ico b"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#EF4444" stroke-width="1.5" opacity=".5"/><path d="M10 6v4l-3 3" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="tf-lbl b">Before</div><div class="tf-txt">「いつか自由な働き方をしたい」と思い続けて何年も経つ。でも何から始めればいいかわからない</div></div>
+        </div>
+        <div class="tf-mid"><svg width="18" height="18" style="color:#5EEAD4"><use href="#ic-arr"/></svg></div>
+        <div class="tf-after">
+          <div class="tf-ico a"><svg width="20" height="20" style="color:#5EEAD4"><use href="#ic-compass"/></svg></div>
+          <div><div class="tf-lbl a">After</div><div class="tf-txt">「いつか」ではなく、今から動ける。場所も時間も選ばない働き方を、ステップごとに実現していける</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section class="support">
+  <div class="inner">
+    <div class="chip reveal">サポート体制</div>
+    <h2 class="h2 reveal">受講中、ずっと一緒に進みます。</h2>
+    <p class="lead reveal">「詰まったときに聞ける場所がある」——それだけで、独学とは全然違います。</p>
+    <div class="sup-grid">
+      <div class="sup-card reveal"><div class="sup-ico"><svg width="28" height="28"><use href="#ic-chat"/></svg></div><div><div class="sup-title">チャット質問サポート（24時間以内）</div><p class="sup-body">わからないことがあればすぐチャットで質問できます。返信目安は24時間以内（夜・土日は翌営業日）。</p></div></div>
+      <div class="sup-card reveal"><div class="sup-ico"><svg width="28" height="28"><use href="#ic-inf"/></svg></div><div><div class="sup-title">質問回数は無制限</div><p class="sup-body">「何度も聞いて申し訳ない」は不要です。わかるまで何度でも、遠慮なく聞いてください。</p></div></div>
+      <div class="sup-card reveal"><div class="sup-ico"><svg width="28" height="28"><use href="#ic-pencil"/></svg></div><div><div class="sup-title">課題フィードバック</div><p class="sup-body">提出した課題は丁寧に確認します。「ここをこうすると良くなる」という具体的なフィードバックをお返しします。</p></div></div>
+      <div class="sup-card reveal"><div class="sup-ico"><svg width="28" height="28"><use href="#ic-target"/></svg></div><div><div class="sup-title">実案件へのアドバイス</div><p class="sup-body">受講中に受注した案件についても相談OK。実際の現場に沿ったアドバイスで、学びを実務に直結させます。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="curriculum" id="curriculum">
+  <div class="inner">
+    <div class="chip reveal">カリキュラム</div>
+    <h2 class="h2 reveal">3つのフェーズで、<br>ゼロから自立まで。</h2>
+    <p class="lead reveal">マインドセットから実務・AI活用まで、段階を踏んで確実に積み上げます。</p>
+    <div class="phase-grid reveal">
+
+      <div class="phase-col">
+        <div class="phase-head">
+          <div class="phase-num" style="color:#7C3AED">Phase 1 — Foundation</div>
+          <div class="phase-title">土台を作る</div>
+          <div class="phase-desc">考え方・環境・基本ソフトを整える。ここをしっかり固めることが最短での成果につながります。</div>
+        </div>
+        <div class="phase-items">
+          <div class="phase-item"><div class="pi-ico" style="background:#F5F3FF"><svg width="15" height="15" style="color:#7C3AED"><use href="#ic-mind"/></svg></div><div><div class="pi-ch">Ch.0</div><div class="pi-name">講座の心構え</div></div></div>
+          <div class="phase-item"><div class="pi-ico" style="background:#F5F3FF"><svg width="15" height="15" style="color:#7C3AED"><use href="#ic-mind"/></svg></div><div><div class="pi-ch">Ch.1</div><div class="pi-name">ビジネスマインド</div></div></div>
+          <div class="phase-item"><div class="pi-ico" style="background:#F5F3FF"><svg width="15" height="15" style="color:#7C3AED"><use href="#ic-tool"/></svg></div><div><div class="pi-ch">Ch.2</div><div class="pi-name">事前準備（環境構築）</div></div></div>
+        </div>
+      </div>
+
+      <div class="phase-col">
+        <div class="phase-head">
+          <div class="phase-num" style="color:#0D9488">Phase 2 — Skill</div>
+          <div class="phase-title">編集力を上げる</div>
+          <div class="phase-desc">Premiere・デザイン・サムネイルなど、現場で通用する編集スキルを体系的に習得します。</div>
+        </div>
+        <div class="phase-items">
+          <div class="phase-item"><div class="pi-ico" style="background:#F0FDFA"><svg width="15" height="15" style="color:#0D9488"><use href="#ic-film"/></svg></div><div><div class="pi-ch">Ch.3–4</div><div class="pi-name">Premiere Pro 基礎〜応用</div></div></div>
+          <div class="phase-item"><div class="pi-ico" style="background:#F0FDFA"><svg width="15" height="15" style="color:#0D9488"><use href="#ic-design"/></svg></div><div><div class="pi-ch">Ch.5–6</div><div class="pi-name">デザイン・サムネイル</div></div></div>
+          <div class="phase-item"><div class="pi-ico" style="background:#F0FDFA"><svg width="15" height="15" style="color:#0D9488"><use href="#ic-film"/></svg></div><div><div class="pi-ch">Ch.7</div><div class="pi-name">Premiere Pro 応用</div></div></div>
+          <div class="phase-item"><div class="pi-ico" style="background:#F0FDFA"><svg width="15" height="15" style="color:#0D9488"><use href="#ic-tool"/></svg></div><div><div class="pi-ch">Ch.8</div><div class="pi-name">Canva 活用</div></div></div>
+        </div>
+      </div>
+
+      <div class="phase-col">
+        <div class="phase-head">
+          <div class="phase-num" style="color:#D97706">Phase 3 — Business</div>
+          <div class="phase-title">稼ぐ仕組みを作る</div>
+          <div class="phase-desc">案件獲得・クライアント対応・AI活用・ディレクションまで。編集者として自立する実務力。</div>
+        </div>
+        <div class="phase-items">
+          <div class="phase-item"><div class="pi-ico" style="background:#FEF3C7"><svg width="15" height="15" style="color:#D97706"><use href="#ic-sales"/></svg></div><div><div class="pi-ch">Ch.9</div><div class="pi-name">案件獲得スキル</div></div></div>
+          <div class="phase-item"><div class="pi-ico" style="background:#FEF3C7"><svg width="15" height="15" style="color:#D97706"><use href="#ic-chat"/></svg></div><div><div class="pi-ch">Ch.10</div><div class="pi-name">クライアントワーク</div></div></div>
+          <div class="phase-item"><div class="pi-ico" style="background:#FEF3C7"><svg width="15" height="15" style="color:#D97706"><use href="#ic-tool"/></svg></div><div><div class="pi-ch">Ch.11</div><div class="pi-name">実務利用ツール</div></div></div>
+          <div class="phase-item"><div class="pi-ico" style="background:#FEF3C7"><svg width="15" height="15" style="color:#D97706"><use href="#ic-compass"/></svg></div><div><div class="pi-ch">Ch.12</div><div class="pi-name">ディレクション</div></div></div>
+          <div class="phase-item"><div class="pi-ico" style="background:#FEF3C7"><svg width="15" height="15" style="color:#D97706"><use href="#ic-ai"/></svg></div><div><div class="pi-ch">Ch.13–14</div><div class="pi-name">AIツール 基礎〜応用</div></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comparison">
+  <div class="inner">
+    <div class="chip reveal">他スクールとの比較</div>
+    <h2 class="h2 reveal">サポート面で選ぶなら、<br>LEAPが圧倒的に違います。</h2>
+    <p class="lead reveal">価格ではなく、「受講中にどれだけ寄り添ってもらえるか」で選んでください。</p>
+    <div class="comp-note reveal">
+      <svg width="17" height="17" style="flex-shrink:0;margin-top:1px"><use href="#ic-ok-b"/></svg>
+      <span>比較は一般的な動画編集スクール・副業スクールの提供内容をもとに作成しています。</span>
+    </div>
+    <div class="comp-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>サポート項目</th>
+            <th class="c-leap">LEAP</th>
+            <th>動画スクールA</th>
+            <th>副業スクールB</th>
+            <th>動画スクールC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>質問回数</td><td class="c-leap"><span class="lh">無制限</span></td><td><span class="cw"><svg width="15" height="15"><use href="#ic-warn"/></svg>月10回まで</span></td><td><span class="cw"><svg width="15" height="15"><use href="#ic-warn"/></svg>月5回まで</span></td><td><span class="cn"><svg width="15" height="15"><use href="#ic-x"/></svg>なし</span></td></tr>
+          <tr><td>質問への返信速度</td><td class="c-leap"><span class="lh">24時間以内</span></td><td><span style="font-size:13px;color:var(--slate-mid)">3〜5営業日</span></td><td><span style="font-size:13px;color:var(--slate-mid)">2〜3営業日</span></td><td><span class="cn"><svg width="15" height="15"><use href="#ic-x"/></svg>掲示板のみ</span></td></tr>
+          <tr><td>課題への個別フィードバック</td><td class="c-leap"><span class="cy"><svg width="15" height="15"><use href="#ic-ok"/></svg>あり（具体的）</span></td><td><span class="cw"><svg width="15" height="15"><use href="#ic-warn"/></svg>簡易コメントのみ</span></td><td><span class="cn"><svg width="15" height="15"><use href="#ic-x"/></svg>なし</span></td><td><span class="cw"><svg width="15" height="15"><use href="#ic-warn"/></svg>グループで共有</span></td></tr>
+          <tr><td>実案件への相談対応</td><td class="c-leap"><span class="cy"><svg width="15" height="15"><use href="#ic-ok"/></svg>OK（随時）</span></td><td><span class="cn"><svg width="15" height="15"><use href="#ic-x"/></svg>対象外</span></td><td><span class="cw"><svg width="15" height="15"><use href="#ic-warn"/></svg>一部プランのみ</span></td><td><span class="cn"><svg width="15" height="15"><use href="#ic-x"/></svg>対象外</span></td></tr>
+          <tr><td>案件獲得サポート</td><td class="c-leap"><span class="cy"><svg width="15" height="15"><use href="#ic-ok"/></svg>あり（添削・提案）</span></td><td><span class="cw"><svg width="15" height="15"><use href="#ic-warn"/></svg>講座内容のみ</span></td><td><span class="cy"><svg width="15" height="15"><use href="#ic-ok"/></svg>あり</span></td><td><span class="cn"><svg width="15" height="15"><use href="#ic-x"/></svg>なし</span></td></tr>
+          <tr><td>受講ペースの自由度</td><td class="c-leap"><span class="cy"><svg width="15" height="15"><use href="#ic-ok"/></svg>完全自由</span></td><td><span class="cw"><svg width="15" height="15"><use href="#ic-warn"/></svg>月次制</span></td><td><span class="cy"><svg width="15" height="15"><use href="#ic-ok"/></svg>自由</span></td><td><span class="cw"><svg width="15" height="15"><use href="#ic-warn"/></svg>視聴期限あり</span></td></tr>
+          <tr><td>クライアントワーク指導</td><td class="c-leap"><span class="cy"><svg width="15" height="15"><use href="#ic-ok"/></svg>あり（実務レベル）</span></td><td><span class="cn"><svg width="15" height="15"><use href="#ic-x"/></svg>なし</span></td><td><span class="cw"><svg width="15" height="15"><use href="#ic-warn"/></svg>一部のみ</span></td><td><span class="cn"><svg width="15" height="15"><use href="#ic-x"/></svg>なし</span></td></tr>
+          <tr><td>AIツール・効率化の指導</td><td class="c-leap"><span class="cy"><svg width="15" height="15"><use href="#ic-ok"/></svg>あり（専門章あり）</span></td><td><span class="cn"><svg width="15" height="15"><use href="#ic-x"/></svg>なし</span></td><td><span class="cn"><svg width="15" height="15"><use href="#ic-x"/></svg>なし</span></td><td><span class="cw"><svg width="15" height="15"><use href="#ic-warn"/></svg>概要のみ</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="inner">
+    <div class="chip reveal">よくある質問</div>
+    <h2 class="h2 reveal">不安なこと、なんでも聞いてください。</h2>
+    <p class="faq-lead reveal">「こんなこと聞いていいのかな？」という些細な疑問も大歓迎です。</p>
+    <div class="faq-list reveal">
+      <div class="faq-item"><div class="faq-q"><span class="faq-qt">使用する編集ソフトは何ですか？</span><div class="faq-ico"><svg width="13" height="13" style="color:#2563EB"><use href="#ic-plus"/></svg></div></div><div class="faq-a"><div class="faq-ai">主にAdobe Premiere Pro・After Effects・Canvaを使用します。事前に使えなくても大丈夫です。講座内で基礎から学べます。</div></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-qt">ソフトはあらかじめ契約しておく必要がありますか？</span><div class="faq-ico"><svg width="13" height="13" style="color:#2563EB"><use href="#ic-plus"/></svg></div></div><div class="faq-a"><div class="faq-ai">受講開始後すぐに実践できるよう、Adobe製品の体験版のタイミングやお得なプランの選び方もご案内します。Canvaは無料プランからでも問題ありません。</div></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-qt">質問できる回数に制限はありますか？</span><div class="faq-ico"><svg width="13" height="13" style="color:#2563EB"><use href="#ic-plus"/></svg></div></div><div class="faq-a"><div class="faq-ai">制限はありません。わかるまで何度でも、遠慮なく質問してください。</div></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-qt">今受けている案件について相談してもいいですか？</span><div class="faq-ico"><svg width="13" height="13" style="color:#2563EB"><use href="#ic-plus"/></svg></div></div><div class="faq-a"><div class="faq-ai">もちろんです。実際の案件に関わることであれば何でもOKです。「こんなこと聞いていいのかな？」という内容でも、気軽に質問してください。</div></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-qt">副業で受けている案件へのフィードバックもしてもらえますか？</span><div class="faq-ico"><svg width="13" height="13" style="color:#2563EB"><use href="#ic-plus"/></svg></div></div><div class="faq-a"><div class="faq-ai">できる範囲でお伝えします。ボリュームによっては「一部のシーン」や「構成・提案文」へのフィードバックになることもありますが、できるだけ実案件で役立つ形でサポートします。</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-final" id="contact">
+  <div class="inner">
+    <h2 class="cta-title reveal">まず、話を聞かせてください。</h2>
+    <p class="cta-body reveal">無料個別相談では、今の状況や目標を聞かせていただきながら、<br><strong>LEAPが本当に合っているかどうか</strong>を一緒に考えます。<br>入会を前提にした押しつけは一切しません。</p>
+    <a href="#" class="btn-white reveal" style="display:inline-flex;align-items:center;gap:10px;font-size:15px;padding:17px 36px;">
+      <svg width="17" height="17" style="color:#1E40AF"><use href="#ic-cal"/></svg>無料個別相談を予約する
+    </a>
+    <div class="cta-gs reveal">
+      <span class="cta-g"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="#86EFAC" stroke-width="1.2"/><path d="M4 6.5l2 2 3-3" stroke="#86EFAC" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>完全無料</span>
+      <span class="cta-g"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="#86EFAC" stroke-width="1.2"/><path d="M4 6.5l2 2 3-3" stroke="#86EFAC" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>勧誘なし</span>
+      <span class="cta-g"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="#86EFAC" stroke-width="1.2"/><path d="M4 6.5l2 2 3-3" stroke="#86EFAC" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>オンライン対応</span>
+      <span class="cta-g"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="#86EFAC" stroke-width="1.2"/><path d="M4 6.5l2 2 3-3" stroke="#86EFAC" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>あなたのペースでOK</span>
+    </div>
+  </div>
+</section>
+
+<footer><div class="f-logo">LEAP</div><p>© 2026 LEAP – Online School for Video Editors</p></footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach((el,i)=>{if(el.isIntersecting){setTimeout(()=>el.target.classList.add('visible'),i*55);obs.unobserve(el.target)}})},{threshold:.07});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const it=q.closest('.faq-item'),op=it.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!op)it.classList.add('open')})});
+</script>
+</body></html>
